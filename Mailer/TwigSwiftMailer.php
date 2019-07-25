@@ -70,7 +70,7 @@ class TwigSwiftMailer implements MailerInterface
         $htmlBody = $template->renderBlock('body_html', $context);
 
         if ((int)\Swift::VERSION >= 6) {
-            $message = (new \Swift_Message())
+            $message = new \Swift_Message();
         } else {
             $message = \Swift_Message::newInstance();
         }
